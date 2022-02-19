@@ -5,12 +5,14 @@ const meanings = require('./meanings');
 const synonyms = require('./synonyms');
 const syllables = require('./syllables');
 const sentence = require('./sentences');
+const random = require('./random');
 
 const app = express();
 
 app.use(cors());
 app.disable('x-powered-by');
 
+app.get('/random', random);
 app.get('/:word', meanings);
 
 app.get('/allMeanings/:word', allMeanings);
